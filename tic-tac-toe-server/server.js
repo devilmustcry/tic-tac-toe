@@ -61,8 +61,8 @@ io.on('connect', (socket) => {
     socket.on(EVENTS.PLAY_MOVE, (row, column, roomId) => {
         const game = ongoingRooms.find((game) => game.roomId === roomId)
         game.insertSymbol(row, column, socket.id)
+        game.printBoard()
         const winner = game.isWinnerDetermined()
-        console.log(winner)
         if (winner) {
             io.to(game.roomId).emit(EVENTS.PRINT_BOARD, game.board)
             io.to(game.roomId).emit(EVENTS.GAME_END, game.winningPlayer)
