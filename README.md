@@ -15,3 +15,12 @@ You can change port in server.js
 
 Client will try to connect at localhost:3000\
 You can change port and host at index.js
+
+```mermaid
+flowchart TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]
+```
